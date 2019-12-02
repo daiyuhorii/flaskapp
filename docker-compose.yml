@@ -1,6 +1,5 @@
 version: "2"
 services:
-
   uwsgi:
     build: ./app
     volumes:
@@ -20,3 +19,14 @@ services:
       - "80:80"
     environment:
       TZ: "Asia/Tokyo"
+
+  mysql:
+    build: ./mysql/
+    volumes:
+      - ./mysql/sqls:/docker-entrypoint-initdb.d
+      - ./mysql/data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=teamnull
+      - MYSQL_DATABASE=db2019 
