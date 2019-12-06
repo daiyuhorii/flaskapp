@@ -4,7 +4,7 @@ from server import app
 
 @app.route('/')
 def index():
-    return "hello world."
+    return "hello world.\n"
 
 # run on port 3031: uWSGI
 if __name__ == '__main__':
