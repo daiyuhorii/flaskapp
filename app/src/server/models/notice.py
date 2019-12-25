@@ -16,8 +16,8 @@ class User(db.Model):
 
     noticeID = db.Column(int(255), primary_key=True)
     adminID = db.Column(VARCHAR(255), nullable=False)
-    title = db.Column(VARCHAR(255), nullable=False)
-    content = db.Column(VARCHAR(255), nullable=False)
+    title = db.Column(VARCHAR(1000), nullable=False)
+    content = db.Column(VARCHAR(10000), nullable=False)
 
     def __init__(self, noticeID, adminID):
         self.noticeID = noticeID
