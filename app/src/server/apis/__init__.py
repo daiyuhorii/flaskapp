@@ -1,1 +1,2 @@
-from .user_api import User, UserAPI
+from .user_api import *
+from .student_api import *

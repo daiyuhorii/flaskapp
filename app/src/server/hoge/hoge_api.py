@@ -7,6 +7,7 @@ app = Blueprint(
     url_prefix='/hoge'
 )
 
+
 @app.route('/test')
 def hoge():
     return jsonify({
