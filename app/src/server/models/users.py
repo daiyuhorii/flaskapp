@@ -86,7 +86,7 @@ class Admin(db.Model):
     password = db.Column(VARCHAR(255), nullable=False)
 
     # do not allow admin to change its username
-    def __init__(password, self):
+    def __init__(self, password):
         self.password = password
 
     def __repr(self):

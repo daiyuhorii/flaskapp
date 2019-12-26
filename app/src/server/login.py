@@ -1,6 +1,6 @@
 from flask_restful import Resource, reqparse
 from flask_login import login_user, current_user
-from flask import request, redirect, Response
+from flask import request, jsonify, redirect, Response
 from server.database import db
 from server.models import Student
 from werkzeug.security import check_password_hash
