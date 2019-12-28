@@ -12,7 +12,7 @@ from sqlalchemy import VARCHAR, CHAR
 from flask_marshmallow.fields import fields
 from server.database import db, ma
 
-class User(db.Model):
+class Notice(db.Model):
     __tablename__ = 'notice'
 
     noticeID = db.Column(int(255), primary_key=True)
@@ -25,3 +25,7 @@ class User(db.Model):
         self.adminID = adminID
         self.title = ""
         self.content = ""
+
+class NoticeSchema(ma.ModelSchema):
+    class Meta:
+        model = Notice
