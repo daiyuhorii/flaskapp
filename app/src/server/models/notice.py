@@ -5,6 +5,7 @@
 #adminID:String 通知者のID
 #title:String 通知タイトル
 #content:String 本文内容
+#get,post,put,deliteの4メソッドに分けて、リソースクラスから継承するAPIクラス(APIsのリソース)にGETやPOSTメソッドが用意されている
 
 
 from sqlalchemy import VARCHAR, CHAR
@@ -22,9 +23,5 @@ class User(db.Model):
     def __init__(self, noticeID, adminID):
         self.noticeID = noticeID
         self.adminID = adminID
-
-    def __repr__(self):
-        return "<User(id='%s', password='%s')>" % (
-            self.id,
-            self.password
-        )
+        self.title = ""
+        self.content = ""
